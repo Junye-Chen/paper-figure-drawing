@@ -1,0 +1,4 @@
+interface:
+  display_name: "CVPR Figure"
+  short_description: "Interactively design editable academic paper figures"
+  default_prompt: "Use $cvpr-figure to discuss the core idea, confirm its visual explanation, layout and style in stages, then export editable PPTX and SVG."

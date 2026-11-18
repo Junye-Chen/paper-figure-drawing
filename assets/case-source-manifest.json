@@ -1,0 +1,37 @@
+[
+  {
+    "paper": "dust3r",
+    "sha256": "400fea3f874aed6a9570a0651a701c2a3c635dcfbc2159348e04e83013a0099a",
+    "inspected": "2026-11-18",
+    "figure_pages": [
+      1,
+      4
+    ]
+  },
+  {
+    "paper": "dreambooth",
+    "sha256": "fe33f0d2f768b83a094113bf2862db4d048c5a61ddf6b0283ae7c1b8f6f7d27c",
+    "inspected": "2026-11-18",
+    "figure_pages": [
+      1,
+      4
+    ]
+  },
+  {
+    "paper": "pixelnerf",
+    "sha256": "e4b1803f3aa6f7764bf3ebb8f0269c40aaa0e4c3185b5ff9d7bea5ef3a456704",
+    "inspected": "2026-11-18",
+    "figure_pages": [
+      1,
+      4
+    ]
+  },
+  {
+    "paper": "lasp",
+    "sha256": "03435f5fdaec36ea6150279089d775fcb8ae869d64b9be50ff0991e62ecdeaaa",
+    "inspected": "2026-11-18",
+    "figure_pages": [
+      4
+    ]
+  }
+]

@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import {validate,protectedChanges,svgString,route,flatten} from './render.mjs';
+const scene=JSON.parse(await fs.readFile(new URL('../assets/smoke-scene.json',import.meta.url)));
+assert.deepEqual(validate(scene).errors,[]);
+const duplicate=structuredClone(scene);duplicate.nodes.push({...scene.nodes[0]});assert.match(validate(duplicate).errors.join(),/duplicate/);
+const missing=structuredClone(scene);missing.nodes.find(n=>n.id==='input_flow').to.id='absent';assert.match(validate(missing).errors.join(),/reference/);
+const outside=structuredClone(scene);outside.nodes[0].x=-1;assert.match(validate(outside).errors.join(),/outside/);
+const changed=structuredClone(scene);flatten(changed.nodes).find(n=>n.id==='input_label').text='Changed';assert.ok(protectedChanges(scene,changed).length);
+const moved=structuredClone(scene);flatten(moved.nodes).find(n=>n.id==='input').x+=10;assert.deepEqual(protectedChanges(scene,moved),[]);
+const edge=flatten(moved.nodes).find(n=>n.id==='input_flow');assert.equal(route(edge,new Map(flatten(moved.nodes).map(n=>[n.id,n])))[0][0],230);
+const xml=svgString(scene);assert.ok(xml.includes('<text'));assert.ok(xml.includes('data-from="input"'));assert.ok(xml.includes('<g id="input_group">'));
+console.log('PASS: schema, duplicate IDs, missing endpoints, bounds, semantic locks, geometry rerouting, SVG groups/text');

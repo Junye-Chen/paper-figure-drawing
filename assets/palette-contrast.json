@@ -1,0 +1,26 @@
+{
+  "ratios": {
+    "#263542": {
+      "#FFFFFF": 12.572,
+      "#F3F5F7": 11.504
+    },
+    "#52616B": {
+      "#FFFFFF": 6.401,
+      "#F3F5F7": 5.857
+    },
+    "#496B88": {
+      "#FFFFFF": 5.612,
+      "#F3F5F7": 5.135
+    },
+    "#A07855": {
+      "#FFFFFF": 3.953,
+      "#F3F5F7": 3.617
+    },
+    "#766A88": {
+      "#FFFFFF": 5.015,
+      "#F3F5F7": 4.589
+    }
+  },
+  "cvd_simulation": "not performed",
+  "scope": "candidate color pairs only"
+}

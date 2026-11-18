@@ -1,0 +1,25 @@
+{
+  "version":1,
+  "title":"Editable exporter test — illustrative, not a research result",
+  "canvas":{"width":960,"height":330,"background":"#FFFFFF"},
+  "style":{"fontFamily":"Arial","fontSize":22},
+  "nodes":[
+    {"id":"header","type":"text","x":30,"y":18,"w":900,"h":36,"text":"Editable figure mechanics","fontSize":25,"bold":true},
+    {"id":"input_group","type":"group","children":[
+      {"id":"input","type":"rect","x":40,"y":110,"w":180,"h":90,"fill":"#E2EDF5","stroke":"#48728D","lock":"semantic"},
+      {"id":"input_label","type":"text","x":55,"y":140,"w":150,"h":36,"text":"Input","align":"center","lock":"semantic"}
+    ]},
+    {"id":"process_group","type":"group","children":[
+      {"id":"process","type":"rect","x":375,"y":100,"w":210,"h":110,"fill":"#E2EEE6","stroke":"#558267","radius":8},
+      {"id":"process_label","type":"text","x":390,"y":130,"w":180,"h":60,"text":"Editable\nmodule","align":"center","bold":true}
+    ]},
+    {"id":"output_group","type":"group","children":[
+      {"id":"output","type":"ellipse","x":740,"y":110,"w":180,"h":90,"fill":"#F4E8D5","stroke":"#A38349"},
+      {"id":"output_label","type":"text","x":755,"y":140,"w":150,"h":36,"text":"Output","align":"center"}
+    ]},
+    {"id":"input_flow","type":"connector","from":{"id":"input","side":"right"},"to":{"id":"process","side":"left"},"strokeWidth":2,"lock":"semantic"},
+    {"id":"output_flow","type":"connector","from":{"id":"process","side":"right"},"to":{"id":"output","side":"left"},"strokeWidth":2},
+    {"id":"feedback","type":"connector","from":{"id":"output","side":"bottom"},"to":{"id":"process","side":"bottom"},"via":[[830,260],[480,260]],"dashed":true,"stroke":"#758595"},
+    {"id":"footer","type":"text","x":30,"y":290,"w":900,"h":24,"fontSize":15,"text":"Synthetic fixture: text, groups, paths and arrows only; no scientific claims."}
+  ]
+}
